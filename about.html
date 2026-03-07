@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Clean AI Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --font-family: 'Inter', sans-serif;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand-icon {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-nav {
+            background-color: var(--primary-color);
+            color: #ffffff !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Page Layout */
+        .page-header {
+            padding: 5rem 5% 3rem;
+            background-color: var(--bg-card);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        /* Content Blocks */
+        .content-block {
+            background-color: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .content-block h2 {
+            font-size: 1.75rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-quote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            padding: 3rem 5%;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a:hover {
+            color: #94a3b8;
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .content-block {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand"><span class="nav-brand-icon">✦</span> Clean AI</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">About the Creator</h1>
+        <p style="font-size: 1.125rem; color: var(--text-light);">Bridging the gap between corporate finance and
+            artificial intelligence.</p>
+    </header>
+
+    <main class="container">
+        <div class="content-block">
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                My Story
+            </h2>
+            <p>I am Ali Haider, a CFO and finance professional with years of experience navigating the complexities of
+                corporate accounting, risk auditing, and financial reporting. Throughout my career, I've spent countless
+                hours dealing with mismatched transactions, poorly formatted bank statements, and the tedious, manual
+                entry processes that plague accounting teams everywhere.</p>
+            <p>My journey shifted when I recognized the untapped potential of artificial intelligence in automating
+                these mundane tasks. I began combining my deep financial expertise with modern AI technologies to create
+                solutions tailored specifically for the headaches finance teams deal with on a daily basis.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 16 16 12 12 8"></polyline>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                Why I Built This Tool
+            </h2>
+            <p>Cleaning up unstructured data—like parsing custom PDF bank statements or standardizing messy Excel/CSV
+                exports—has historically been a major bottleneck. Off-the-shelf software often fails when a PDF table
+                lacks borders, or when a column's spacing is misaligned.</p>
+            <div class="highlight-quote">
+                "I realized that to truly fix the problem, the solution needed to understand the context of the data,
+                not just its rigid layout."
+            </div>
+            <p>Clean AI was born out of pure necessity. I wanted an application where anyone could drop a messy
+                financial file and instantly retrieve perfectly categorized, dashboard-ready insights—saving hours of
+                data wrangling and drastically reducing human error.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                My Mission & Vision
+            </h2>
+            <p>My mission is straightforward: <strong>empower finance professionals by giving them back their
+                    time.</strong> By leveraging AI, I want to eliminate manual data entry from the modern accountant's
+                workflow entirely.</p>
+            <p>Looking ahead, I envision a world where accounting software is not just a repository for numbers, but an
+                active, intelligent partner that anticipates your needs, spots anomalies before they become critical,
+                and prepares high-level analytics on demand.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">✦ Clean AI</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tool.html">Tool</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Clean AI Chatbot Widget -->
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
