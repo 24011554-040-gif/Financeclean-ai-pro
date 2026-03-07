@@ -361,12 +361,25 @@
         // 2. Show typing indicator
         const typingId = showTypingIndicator();
 
-        // 3. API Call to our FastAPI backend
+        // 3. API Call to OpenRouter
         try {
-            const response = await fetch('http://localhost:8000/chat', {
+            const systemPrompt = "You are the helpful front-line AI assistant for Clean AI Finance, built by Ali Haider. Clean AI is a tool that automates financial workflows by instantly extracting, cleaning, and categorizing data from messy bank statement PDFs and CSVs. It provides instant visual dashboards and smart categorization. Keep your responses concise, friendly, and focused on helping users understand the product. If they need highly specific technical support, tell them to use the Contact page to email Ali directly.";
+
+            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: text })
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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',
+                    'HTTP-Referer': 'https://github.com/24011554-040-gif/Financeclean-ai-pro', // Required by OpenRouter
+                    'X-Title': 'Clean AI Marketing Website'
+                },
+                body: JSON.stringify({ 
+                    model: "google/gemini-2.5-flash",
+                    messages: [
+                        { role: "system", content: systemPrompt },
+                        { role: "user", content: text }
+                    ]
+                })
             });
 
             if (!response.ok) {
@@ -374,7 +387,7 @@
             }
 
             const data = await response.json();
-            const aiReply = data.reply;
+            const aiReply = data.choices[0].message.content;
 
             removeTypingIndicator(typingId);
             appendMessage(aiReply, 'ai');
@@ -382,7 +395,7 @@
         } catch (error) {
             removeTypingIndicator(typingId);
             console.error("Chat API Error:", error);
-            appendMessage("Sorry, I'm having trouble connecting right now. Please message Ali Haider directly via the Contact page.", 'ai');
+            appendMessage("Sorry, I'm having trouble connecting to my brain right now. Please message Ali Haider directly via the Contact page.", 'ai');
         }
     };
 
