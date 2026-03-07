@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Contact Us - Clean AI Finance</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -355,8 +356,7 @@
 
         <!-- Contact Form -->
         <div class="contact-form-container">
-            <form action="#" method="POST"
-                onsubmit="event.preventDefault(); alert('Message feature is a static template right now.');">
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
                 <div class="form-group">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
@@ -376,6 +376,24 @@
 
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
+            <div id="form-success" style="display:none; margin-top:1.5rem; padding:1rem 1.25rem; background:#ecfdf5; border:1px solid #6ee7b7; border-radius:8px; color:#065f46; font-weight:500; text-align:center;">
+                ✅ Your email app should have opened with the message. If it didn't, please email <strong>alihaiderfinance.cfo@gmail.com</strong> directly.
+            </div>
+        </div>
+
+        <script>
+            function handleContactSubmit(e) {
+                e.preventDefault();
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+                var subject = encodeURIComponent('Clean AI Contact: Message from ' + name);
+                var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = 'mailto:alihaiderfinance.cfo@gmail.com?subject=' + subject + '&body=' + body;
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('contact-form').reset();
+            }
+        </script>
         </div>
     </main>
 

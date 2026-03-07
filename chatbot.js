@@ -411,7 +411,7 @@
     // Helpers
     function appendMessage(text, sender) {
         const msgDiv = document.createElement('div');
-        msgDiv.className = \`message \${sender}\`;
+        msgDiv.className = 'message ' + sender;
         msgDiv.textContent = text;
         messagesContainer.appendChild(msgDiv);
         scrollToBottom();
