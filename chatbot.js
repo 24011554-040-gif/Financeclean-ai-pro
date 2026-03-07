@@ -304,19 +304,8 @@
     });
 
     // ============================================================
-    // GEMINI AI RESPONSE ENGINE — Calls Google Gemini API directly
+    // AI RESPONSE ENGINE — Calls local/production python backend
     // ============================================================
-
-    var GEMINI_API_KEY = 'AIzaSyD9d9tuSAsfIDsgdk4x7pEKL90qT9GQ728';
-    var GEMINI_MODEL = 'gemini-3-flash-preview';
-    var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/' + GEMINI_MODEL + ':generateContent?key=' + GEMINI_API_KEY;
-
-    var SYSTEM_PROMPT = 'You are the friendly AI assistant for Clean AI Finance, a software product created by Ali Haider (a CFO). ' +
-        'Clean AI automatically extracts, categorizes, and analyzes complex bank statements from PDFs and CSVs in seconds. ' +
-        'Your job is to answer questions politely, concisely (keep responses under 3-4 sentences when possible), and direct users to try the tool on the website if they need to parse documents. ' +
-        'If asked about pricing, say the tool is currently free to try. ' +
-        'If asked about contact, provide alihaiderfinance.cfo@gmail.com. ' +
-        'Use a friendly, professional tone with relevant emojis.';
 
     var conversationHistory = [];
 
@@ -423,25 +412,22 @@
         return reply;
     }
 
-    // Call Google Gemini API for a real AI response
-    async function getGeminiReply(userMessage) {
-        conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
-
-        var contents = [
-            { role: 'user', parts: [{ text: 'System Instructions: ' + SYSTEM_PROMPT }] },
-            { role: 'model', parts: [{ text: 'Understood! I will act as the Clean AI Finance assistant.' }] }
-        ].concat(conversationHistory);
-
+    // Call backend API for a real AI response
+    async function getBackendReply(userMessage) {
+        // We no longer need to manage conversation history here, 
+        // the backend or LLM might handle it, or we just send single messages
         var payload = {
-            contents: contents,
-            generationConfig: {
-                maxOutputTokens: 1024,
-                temperature: 0.7
-            }
+            message: userMessage
         };
 
         try {
-            var response = await fetch(GEMINI_URL, {
+            // Use the local API endpoint (or production URL when deployed)
+            // For GitHub Pages, this will need to be updated to the production backend URL later
+            var API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://127.0.0.1:8000/chat' 
+                : 'https://cleanai-backend-production.up.railway.app/chat'; // Placeholder for production
+
+            var response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -453,19 +439,14 @@
 
             var data = await response.json();
 
-            if (data.candidates && data.candidates.length > 0 && data.candidates[0].content) {
-                var aiReply = data.candidates[0].content.parts[0].text;
-                conversationHistory.push({ role: 'model', parts: [{ text: aiReply }] });
-                if (conversationHistory.length > 20) {
-                    conversationHistory = conversationHistory.slice(-20);
-                }
-                return aiReply;
+            if (data.reply) {
+                return data.reply;
             } else {
                 throw new Error('No valid response from API');
             }
         } catch (error) {
-            console.error('Gemini API error:', error);
-            // Fall back to keyword matching
+            console.error('Backend API error:', error);
+            // Fall back to keyword matching if backend is down
             return getSmartReply(userMessage);
         }
     }
@@ -486,8 +467,8 @@
         // Show typing indicator
         var typingId = showTypingIndicator();
 
-        // Call Gemini API for real AI response
-        var reply = await getGeminiReply(text);
+        // Call backend API for real AI response
+        var reply = await getBackendReply(text);
         removeTypingIndicator(typingId);
         appendMessage(reply, 'ai');
     }
