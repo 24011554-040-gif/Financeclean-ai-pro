@@ -317,7 +317,7 @@
             reply: "I'm doing great, thanks for asking! \uD83D\uDE0A I'm here to help you learn about Clean AI and how it can save you hours of manual financial data work. How can I help you today?"
         },
         {
-            keywords: ['what is clean ai', 'what does this tool do', 'what is this', 'tell me about', 'what does clean ai do', 'explain', 'about clean ai', 'what do you do', 'about this tool'],
+            keywords: ['what is clean ai', 'what does this tool do', 'what is this', 'tell me about', 'what does clean ai do', 'explain', 'about clean ai', 'what do you do', 'what can you do', 'what are your functions', 'about this tool'],
             reply: "Clean AI is a powerful financial data automation tool that instantly extracts, cleans, and categorizes data from messy bank statement PDFs and CSVs. \uD83D\uDCCA\n\nJust upload your messy file and our AI engine will:\n\u2022 Parse complex tables (even borderless or misaligned ones)\n\u2022 Categorize every transaction automatically\n\u2022 Generate visual dashboards and charts\n\u2022 Export clean, formatted spreadsheets\n\nClick 'Try Tool' in the navigation to try it free!"
         },
         {
