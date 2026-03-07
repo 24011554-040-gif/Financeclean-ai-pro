@@ -356,7 +356,7 @@
 
         <!-- Contact Form -->
         <div class="contact-form-container">
-            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <form id="contact-form">
                 <div class="form-group">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
@@ -374,25 +374,47 @@
                         required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
             </form>
             <div id="form-success" style="display:none; margin-top:1.5rem; padding:1rem 1.25rem; background:#ecfdf5; border:1px solid #6ee7b7; border-radius:8px; color:#065f46; font-weight:500; text-align:center;">
-                ✅ Your email app should have opened with the message. If it didn't, please email <strong>alihaiderfinance.cfo@gmail.com</strong> directly.
+                ✅ Message sent successfully! Ali will get back to you shortly.
+            </div>
+            <div id="form-error" style="display:none; margin-top:1.5rem; padding:1rem 1.25rem; background:#fef2f2; border:1px solid #fca5a5; border-radius:8px; color:#991b1b; font-weight:500; text-align:center;">
+                ❌ Something went wrong. Please email <strong>alihaiderfinance.cfo@gmail.com</strong> directly.
             </div>
         </div>
 
         <script>
-            function handleContactSubmit(e) {
+            document.getElementById('contact-form').addEventListener('submit', async function(e) {
                 e.preventDefault();
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var message = document.getElementById('message').value;
-                var subject = encodeURIComponent('Clean AI Contact: Message from ' + name);
-                var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-                window.location.href = 'mailto:alihaiderfinance.cfo@gmail.com?subject=' + subject + '&body=' + body;
-                document.getElementById('form-success').style.display = 'block';
-                document.getElementById('contact-form').reset();
-            }
+                var btn = document.getElementById('submit-btn');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                document.getElementById('form-success').style.display = 'none';
+                document.getElementById('form-error').style.display = 'none';
+
+                try {
+                    var response = await fetch('https://formspree.io/f/mqeykwne', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            message: document.getElementById('message').value
+                        })
+                    });
+                    if (response.ok) {
+                        document.getElementById('form-success').style.display = 'block';
+                        document.getElementById('contact-form').reset();
+                    } else {
+                        document.getElementById('form-error').style.display = 'block';
+                    }
+                } catch (err) {
+                    document.getElementById('form-error').style.display = 'block';
+                }
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+            });
         </script>
         </div>
     </main>

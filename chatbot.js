@@ -345,6 +345,44 @@
         sendBtn.disabled = this.value.trim() === '';
     });
 
+    // Conversation history for context
+    const conversationHistory = [];
+
+    const SYSTEM_PROMPT = `You are the Clean AI Assistant — a friendly, knowledgeable, and conversational AI chatbot embedded on the Clean AI Finance marketing website. You were created by Ali Haider, a CFO and finance professional.
+
+ABOUT CLEAN AI:
+Clean AI is a powerful financial data automation tool that:
+- Instantly extracts, cleans, and categorizes data from messy bank statement PDFs and CSVs
+- Uses advanced AI to parse borderless tables, misaligned columns, and inconsistent formatting
+- Automatically categorizes transactions (groceries, rent, salary, transfers, utilities, etc.)
+- Generates beautiful visual dashboards with income vs expense charts, cash flow summaries
+- Exports perfectly formatted, clean spreadsheets ready for accounting software
+- Works with statements from ANY bank — no templates needed
+
+HOW IT WORKS:
+1. Upload — User uploads a messy PDF or CSV bank statement
+2. AI Processing — The intelligent engine cleans, aligns columns, and categorizes every transaction
+3. Analyze & Export — User reviews visual charts and downloads the clean, categorized data
+
+WHO IT'S FOR:
+- Small business owners tracking expenses
+- Accountants and bookkeepers processing client statements
+- Finance professionals who are tired of manual data entry
+- Freelancers managing invoices and income
+- Anyone who needs to make sense of bank statement data quickly
+
+ABOUT THE CREATOR:
+Ali Haider is a CFO and finance professional with years of experience in corporate accounting, risk auditing, and financial reporting. He built Clean AI out of frustration with existing tools that couldn't handle messy, real-world bank statements.
+
+YOUR BEHAVIOR:
+- Be warm, friendly, and conversational. Say hi back when someone says hi!
+- Keep answers concise but helpful (2-4 sentences for simple questions, more for detailed ones)
+- If someone asks about pricing, say the tool is currently free to try via the "Try Tool" page
+- If someone needs hands-on technical support or enterprise inquiries, suggest they visit the Contact page to reach Ali directly
+- You can answer general finance questions briefly, but always tie it back to how Clean AI can help
+- Never make up features that don't exist
+- If you don't know something specific, be honest and suggest contacting Ali`;
+
     // Handle send
     const sendMessage = async () => {
         const text = inputField.value.trim();
@@ -352,6 +390,7 @@
 
         // 1. Add user message
         appendMessage(text, 'user');
+        conversationHistory.push({ role: 'user', content: text });
 
         // Reset input
         inputField.value = '';
@@ -363,39 +402,42 @@
 
         // 3. API Call to OpenRouter
         try {
-            const systemPrompt = "You are the helpful front-line AI assistant for Clean AI Finance, built by Ali Haider. Clean AI is a tool that automates financial workflows by instantly extracting, cleaning, and categorizing data from messy bank statement PDFs and CSVs. It provides instant visual dashboards and smart categorization. Keep your responses concise, friendly, and focused on helping users understand the product. If they need highly specific technical support, tell them to use the Contact page to email Ali directly.";
+            const messages = [
+                { role: 'system', content: SYSTEM_PROMPT },
+                ...conversationHistory.slice(-10) // Keep last 10 messages for context
+            ];
 
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer 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',
-                    'HTTP-Referer': 'https://github.com/24011554-040-gif/Financeclean-ai-pro', // Required by OpenRouter
-                    'X-Title': 'Clean AI Marketing Website'
+                    'HTTP-Referer': 'https://24011554-040-gif.github.io/Financeclean-ai-pro/',
+                    'X-Title': 'Clean AI Finance'
                 },
                 body: JSON.stringify({ 
-                    model: "google/gemini-2.5-flash",
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        { role: "user", content: text }
-                    ]
+                    model: 'google/gemini-2.0-flash-001',
+                    messages: messages
                 })
             });
 
+            const data = await response.json();
+
             if (!response.ok) {
-                throw new Error("Network response was not ok");
+                console.error('OpenRouter API error:', data);
+                throw new Error(data.error ? data.error.message : 'API request failed');
             }
 
-            const data = await response.json();
             const aiReply = data.choices[0].message.content;
+            conversationHistory.push({ role: 'assistant', content: aiReply });
 
             removeTypingIndicator(typingId);
             appendMessage(aiReply, 'ai');
 
         } catch (error) {
             removeTypingIndicator(typingId);
-            console.error("Chat API Error:", error);
-            appendMessage("Sorry, I'm having trouble connecting to my brain right now. Please message Ali Haider directly via the Contact page.", 'ai');
+            console.error('Chat API Error:', error);
+            appendMessage("I'm having a brief connection issue. Please try again in a moment, or reach out to Ali directly via the Contact page!", 'ai');
         }
     };
 
