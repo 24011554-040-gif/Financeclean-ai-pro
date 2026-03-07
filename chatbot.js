@@ -416,7 +416,7 @@ YOUR BEHAVIOR:
                     'X-Title': 'Clean AI Finance'
                 },
                 body: JSON.stringify({ 
-                    model: 'google/gemini-2.0-flash-001',
+                    model: 'meta-llama/llama-3.3-70b-instruct',
                     messages: messages
                 })
             });
