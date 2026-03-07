@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Terms of Service - Clean AI Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --font-family: 'Inter', sans-serif;
+            --border-color: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); color: var(--text-main); background-color: var(--bg-body); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; gap: 0.5rem; }
+        .nav-brand-icon { color: var(--primary-color); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-links a { font-weight: 500; color: var(--text-light); }
+        .nav-links a:hover { color: var(--primary-color); }
+        .btn-nav { background-color: var(--primary-color); color: #ffffff !important; padding: 0.5rem 1.25rem; border-radius: 6px; }
+        .btn-nav:hover { background-color: var(--primary-hover); }
+        
+        .page-header { padding: 4rem 5% 2rem; background-color: var(--bg-card); text-align: center; border-bottom: 1px solid var(--border-color); }
+        .page-title { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; }
+        .last-updated { color: var(--text-light); font-size: 0.95rem; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 5%; background: var(--bg-card); border-radius: 12px; margin-top: 2rem; margin-bottom: 3rem; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .legal-content h2 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 2rem; margin-bottom: 1rem; }
+        .legal-content h2:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 1rem; }
+        .legal-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        
+        footer { background-color: var(--secondary-color); color: #ffffff; padding: 3rem 5%; margin-top: auto; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: 700; color: #ffffff; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+        .footer-links a { color: #cbd5e1; font-size: 0.95rem; }
+        .footer-links a:hover { color: #ffffff; }
+        .copyright { color: #94a3b8; font-size: 0.875rem; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <span class="nav-brand-icon">✦</span> Clean AI
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="last-updated">Last Updated: March 2026</p>
+    </header>
+
+    <main class="container">
+        <div class="legal-content">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using Clean AI Finance ("Clean AI", "we", "us", or "our"), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>Clean AI provides an automated financial data parsing and categorization tool. Our service allows users to upload PDF and CSV bank statements, which our AI engine parses, organizes, and visually dashboards.</p>
+
+            <h2>3. User Responsibilities</h2>
+            <ul>
+                <li>You agree that you have the right and authority to upload and process the financial documents you submit.</li>
+                <li>You will not use Clean AI for any illegal or unauthorized purpose.</li>
+                <li>You are responsible for reviewing the accuracy of the categorized data before relying on it for accounting or tax purposes. Clean AI is an AI-assisted tool and may occasionally miscategorize transactions.</li>
+            </ul>
+
+            <h2>4. Data and Privacy</h2>
+            <p>Your privacy is important to us. The financial data you upload is processed temporarily to generate your dashboard and clean exports. For full details on how we handle your data, please see our Privacy Policy.</p>
+
+            <h2>5. Intellectual Property</h2>
+            <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Clean AI Finance and its creators. You may not copy, modify, or distribute our proprietary software, algorithms, or visual designs.</p>
+
+            <h2>6. Subscription and Payments</h2>
+            <p>Certain features of Clean AI may require a paid subscription. Billing is handled securely through our payment provider, Paddle. You agree to provide accurate billing information and authorize us to charge your payment method for the agreed subscription fees.</p>
+
+            <h2>7. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, Clean AI Finance shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of the service.</p>
+            <p>Clean AI is not a substitute for professional accounting, tax, or legal advice.</p>
+
+            <h2>8. Changes to Terms</h2>
+            <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of significant changes on our website. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.</p>
+
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us at alihaiderfinance.cfo@gmail.com.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">✦ Clean AI</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tool.html">Tool</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="refund.html">Refund Policy</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="chatbot.js?v=2"></script>
+</body>
+</html>
