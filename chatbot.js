@@ -304,8 +304,21 @@
     });
 
     // ============================================================
-    // SMART RESPONSE ENGINE — No External API Required
+    // GEMINI AI RESPONSE ENGINE — Calls Google Gemini API directly
     // ============================================================
+
+    var GEMINI_API_KEY = 'AIzaSyD9d9tuSAsfIDsgdk4x7pEKL90qT9GQ728';
+    var GEMINI_MODEL = 'gemini-3-flash-preview';
+    var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/' + GEMINI_MODEL + ':generateContent?key=' + GEMINI_API_KEY;
+
+    var SYSTEM_PROMPT = 'You are the friendly AI assistant for Clean AI Finance, a software product created by Ali Haider (a CFO). ' +
+        'Clean AI automatically extracts, categorizes, and analyzes complex bank statements from PDFs and CSVs in seconds. ' +
+        'Your job is to answer questions politely, concisely (keep responses under 3-4 sentences when possible), and direct users to try the tool on the website if they need to parse documents. ' +
+        'If asked about pricing, say the tool is currently free to try. ' +
+        'If asked about contact, provide alihaiderfinance.cfo@gmail.com. ' +
+        'Use a friendly, professional tone with relevant emojis.';
+
+    var conversationHistory = [];
 
     var responses = [
         {
@@ -410,8 +423,55 @@
         return reply;
     }
 
+    // Call Google Gemini API for a real AI response
+    async function getGeminiReply(userMessage) {
+        conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
+
+        var contents = [
+            { role: 'user', parts: [{ text: 'System Instructions: ' + SYSTEM_PROMPT }] },
+            { role: 'model', parts: [{ text: 'Understood! I will act as the Clean AI Finance assistant.' }] }
+        ].concat(conversationHistory);
+
+        var payload = {
+            contents: contents,
+            generationConfig: {
+                maxOutputTokens: 1024,
+                temperature: 0.7
+            }
+        };
+
+        try {
+            var response = await fetch(GEMINI_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error('API returned status ' + response.status);
+            }
+
+            var data = await response.json();
+
+            if (data.candidates && data.candidates.length > 0 && data.candidates[0].content) {
+                var aiReply = data.candidates[0].content.parts[0].text;
+                conversationHistory.push({ role: 'model', parts: [{ text: aiReply }] });
+                if (conversationHistory.length > 20) {
+                    conversationHistory = conversationHistory.slice(-20);
+                }
+                return aiReply;
+            } else {
+                throw new Error('No valid response from API');
+            }
+        } catch (error) {
+            console.error('Gemini API error:', error);
+            // Fall back to keyword matching
+            return getSmartReply(userMessage);
+        }
+    }
+
     // Handle send
-    function sendMessage() {
+    async function sendMessage() {
         var text = inputField.value.trim();
         if (!text) return;
 
@@ -423,15 +483,13 @@
         inputField.style.height = 'auto';
         sendBtn.disabled = true;
 
-        // Show typing indicator, then reply after short delay
+        // Show typing indicator
         var typingId = showTypingIndicator();
 
-        var delay = 400 + Math.random() * 800; // 400-1200ms realistic delay
-        setTimeout(function () {
-            removeTypingIndicator(typingId);
-            var reply = getSmartReply(text);
-            appendMessage(reply, 'ai');
-        }, delay);
+        // Call Gemini API for real AI response
+        var reply = await getGeminiReply(text);
+        removeTypingIndicator(typingId);
+        appendMessage(reply, 'ai');
     }
 
     sendBtn.addEventListener('click', sendMessage);
