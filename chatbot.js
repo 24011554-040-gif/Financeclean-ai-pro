@@ -411,12 +411,12 @@ YOUR BEHAVIOR:
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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',
+                    'Authorization': 'Bearer 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',
                     'HTTP-Referer': 'https://24011554-040-gif.github.io/Financeclean-ai-pro/',
                     'X-Title': 'Clean AI Finance'
                 },
                 body: JSON.stringify({ 
-                    model: 'meta-llama/llama-3.3-70b-instruct',
+                    model: 'nvidia/nemotron-nano-9b-v2:free',
                     messages: messages
                 })
             });
