@@ -1,114 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>About Us - Clean AI Finance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>About — FinanceClean AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="nav" id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;"><img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI</a>
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="tool.html" class="btn-primary">Try Tool</a>
-        </div>
-    </nav>
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="FinanceClean AI"> FinanceClean</a>
+            <div class="nav-items">
+                <a href="index.html">Product</a>
+                <a href="about.html" class="active">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="tool.html" class="btn-primary">Try the Tool</a>
+            </div>
+        </nav>
+    </div>
 
     <header class="page-header">
-        <img src="assets/img/profile_pic_circular.png" alt="Ali Haider - Founder" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 1.5rem; border: 4px solid var(--bg);" loading="lazy">
+        <img src="assets/img/profile_pic_circular.png" alt="Ali Haider" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; border: 3px solid var(--border);" loading="lazy">
         <h1 class="page-title">About the Creator</h1>
-        <p style="font-size: 1.125rem; color: var(--text-muted);">Bridging the gap between corporate finance and
-            artificial intelligence.</p>
+        <p class="page-subtitle" style="margin: 0.75rem auto 0;">Bridging the gap between corporate finance and artificial intelligence.</p>
     </header>
 
-    <main class="container container-narrow">
+    <main class="container container-narrow" style="padding-top: 2rem;">
         <div class="content-block">
             <h2>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 My Story
             </h2>
-            <p>I am Ali Haider, a CFO and finance professional with years of experience navigating the complexities of
-                corporate accounting, risk auditing, and financial reporting. Throughout my career, I've spent countless
-                hours dealing with mismatched transactions, poorly formatted bank statements, and the tedious, manual
-                entry processes that plague accounting teams everywhere.</p>
-            <p>My journey shifted when I recognized the untapped potential of artificial intelligence in automating
-                these mundane tasks. I began combining my deep financial expertise with modern AI technologies to create
-                solutions tailored specifically for the headaches finance teams deal with on a daily basis.</p>
+            <p>I am Ali Haider, a CFO and finance professional with years of experience navigating the complexities of corporate accounting, risk auditing, and financial reporting. Throughout my career, I've spent countless hours dealing with mismatched transactions, poorly formatted bank statements, and the tedious, manual entry processes that plague accounting teams everywhere.</p>
+            <p>My journey shifted when I recognized the untapped potential of artificial intelligence in automating these mundane tasks. I began combining my deep financial expertise with modern AI technologies to create solutions tailored specifically for the headaches finance teams deal with on a daily basis.</p>
         </div>
 
         <div class="content-block">
             <h2>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 16 16 12 12 8"></polyline>
-                    <line x1="8" y1="12" x2="16" y2="12"></line>
-                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                 Why I Built This Tool
             </h2>
-            <p>Cleaning up unstructured data—like parsing custom PDF bank statements or standardizing messy Excel/CSV
-                exports—has historically been a major bottleneck. Off-the-shelf software often fails when a PDF table
-                lacks borders, or when a column's spacing is misaligned.</p>
+            <p>Cleaning up unstructured data — like parsing custom PDF bank statements or standardizing messy Excel/CSV exports — has historically been a major bottleneck. Off-the-shelf software often fails when a PDF table lacks borders, or when column spacing is misaligned.</p>
             <div class="highlight-quote">
-                "I realized that to truly fix the problem, the solution needed to understand the context of the data,
-                not just its rigid layout."
+                "I realized that to truly fix the problem, the solution needed to understand the context of the data, not just its rigid layout."
             </div>
-            <p>Clean AI was born out of pure necessity. I wanted an application where anyone could drop a messy
-                financial file and instantly retrieve perfectly categorized, dashboard-ready insights—saving hours of
-                data wrangling and drastically reducing human error.</p>
+            <p>Clean AI was born out of pure necessity. I wanted an application where anyone could drop a messy financial file and instantly retrieve perfectly categorized, dashboard-ready insights — saving hours of data wrangling and drastically reducing human error.</p>
         </div>
 
         <div class="content-block">
             <h2>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                My Mission & Vision
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                My Mission &amp; Vision
             </h2>
-            <p>My mission is straightforward: <strong>empower finance professionals by giving them back their
-                    time.</strong> By leveraging AI, I want to eliminate manual data entry from the modern accountant's
-                workflow entirely.</p>
-            <p>Looking ahead, I envision a world where accounting software is not just a repository for numbers, but an
-                active, intelligent partner that anticipates your needs, spots anomalies before they become critical,
-                and prepares high-level analytics on demand.</p>
+            <p>My mission is straightforward: <strong>empower finance professionals by giving them back their time.</strong> By leveraging AI, I want to eliminate manual data entry from the modern accountant's workflow entirely.</p>
+            <p>Looking ahead, I envision a world where accounting software is not just a repository for numbers, but an active, intelligent partner that anticipates your needs, spots anomalies before they become critical, and prepares high-level analytics on demand.</p>
         </div>
     </main>
 
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
-        <div class="f-links">
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="refund.html">Refunds</a>
-        </div>
+        <div class="f-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a></div>
     </footer>
-    <script>
-        window.onscroll = function() {
-            var nav = document.getElementById('navbar');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-
-    <!-- Custom Clean AI Chatbot Widget -->
-    <script src="chatbot.js?v=2"></script>
+    <script src="chatbot.js?v=3"></script>
 </body>
-
 </html>

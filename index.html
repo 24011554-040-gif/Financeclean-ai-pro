@@ -1,128 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>FinanceClean AI — Precision Financial Engineering</title>
-    <!-- Premium Font: Inter for UI precision -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>FinanceClean AI — Automated Financial Data Engineering</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="nav" id="navbar">
-        <a href="index.html" class="logo">
-            <img src="assets/img/logo.png" alt="logo">
-            FinanceClean
-        </a>
-        <div class="nav-items">
-            <a href="#product">Product</a>
-            <a href="about.html">Architecture</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="tool.html" class="btn-primary">Try the Tool</a>
-        </div>
-    </nav>
 
-    <!-- 1. What the product does -->
+    <!-- Navigation -->
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="FinanceClean AI">
+                FinanceClean
+            </a>
+            <div class="nav-items">
+                <a href="index.html" class="active">Product</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="tool.html" class="btn-primary">Try the Tool</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 1. Hero Section -->
     <header class="hero">
-        <div class="pill">v2.0 Model Now Online</div>
         <h1 class="page-title">Automate your financial forensics.</h1>
-        <p class="page-subtitle" style="max-width: 650px; margin: 0 auto 3.5rem;">
-            Turn messy, unstructured bank statements and PDFs into actionable, categorized ledger data instantly.
+        <p class="page-subtitle">
+            Turn messy bank statements and PDFs into clean, categorized ledger data in under 60 seconds.
         </p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
+        <div class="hero-actions">
             <a href="tool.html" class="btn-primary btn-large">Launch Dashboard</a>
-            <a href="#product" class="btn-primary btn-large" style="background: transparent; color: white; border: 1px solid var(--border);">See How It Works</a>
+            <a href="#features" class="btn-outline btn-large">See How It Works</a>
         </div>
-
-        <div class="hero-viz">
-            <img src="assets/img/mockup_premium_wide.png" alt="SaaS Dashboard Preview" loading="lazy">
+        <div class="hero-image">
+            <img src="assets/img/mockup_premium_wide.png" alt="FinanceClean AI Dashboard" loading="lazy">
         </div>
     </header>
 
-    <!-- 2. Who it is for & Social Trust -->
-    <section class="container text-center" style="padding-top: 5rem; padding-bottom: 5rem;">
-        <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 2rem;">Trusted by forward-thinking teams</p>
-        <div style="display: flex; justify-content: center; gap: 4rem; opacity: 0.5; filter: grayscale(100%); flex-wrap: wrap;">
-            <h3>Acme Corp</h3>
-            <h3>GlobalTech</h3>
-            <h3>Stark Ind</h3>
-            <h3>Wayne Ent</h3>
+    <!-- 2. Product Explanation -->
+    <section class="container">
+        <div class="text-center" style="max-width: 700px; margin: 0 auto;">
+            <span class="section-label">What is FinanceClean?</span>
+            <h2 class="section-title">Expert-grade parsing meets artificial intelligence.</h2>
+            <p class="section-description" style="margin: 0 auto;">
+                Upload any PDF or CSV bank statement. Our neural OCR reconstructs broken tables, and our AI engine categorizes every transaction into tax-ready accounting buckets — automatically.
+            </p>
         </div>
     </section>
 
-    <!-- 3. Feature List (Capabilities) -->
-    <section id="product" class="container">
-        <span class="section-tag" style="text-transform: uppercase; letter-spacing: 1px; color: var(--primary); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 1rem;">Core Capabilities</span>
-        <h2 class="page-title" style="font-size: 3rem; margin-bottom: 4rem; max-width: 800px;">Built for precision.<br>Engineered for scale.</h2>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
-            <div class="f-item">
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Neural OCR Parsing</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Proprietary vision models cleanly extract data from misaligned, borderless, and split transaction tables where traditional OCR fails.</p>
-            </div>
-            <div class="f-item">
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Contextual A.I. Engine</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Large Language Models categorize transactions using deep financial context, automatically grouping spending into 25+ tax-ready buckets.</p>
-            </div>
-            <div class="f-item">
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Anomaly Shield</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Statistical models detect duplicate payments, rapid sequential charges, and unusual spending behavior in under 60 seconds.</p>
+    <!-- 3. Features Section -->
+    <section id="features" class="container" style="background: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); max-width: 100%; padding-left: 0; padding-right: 0;">
+        <div style="max-width: var(--container); margin: 0 auto; padding: 0 24px;">
+            <span class="section-label">Core Capabilities</span>
+            <h2 class="section-title" style="margin-bottom: 3rem;">Built for precision. Engineered for scale.</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Neural OCR Parsing</h3>
+                    <p>Proprietary vision models cleanly extract data from misaligned, borderless, and split transaction tables where traditional OCR fails.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Contextual A.I. Engine</h3>
+                    <p>Large Language Models categorize transactions using deep financial context, automatically grouping into 25+ tax-ready accounting buckets.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Anomaly Detection</h3>
+                    <p>Statistical models detect duplicate payments, rapid sequential charges, and unusual spending patterns in under 60 seconds.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Deep Dive Mockups -->
-    <main class="container" style="padding-top: 2rem;">
-        
-        <div class="surface-card" style="padding: 0; overflow: hidden; margin-bottom: 8rem; border: 1px solid var(--border);">
-            <img src="assets/img/mockup_dashboard_wide.png" alt="AI Assisted Ledger Analytics" style="width: 100%; display: block;" loading="lazy">
-            <div style="padding: 4rem;">
-                <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Visual Ledger Analytics</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">Transform thousands of rows of raw ledger data into actionable cash flow intelligence. Identify monthly trends and cut unnecessary overhead instantly.</p>
+    <!-- 4. Benefits Section (single image) -->
+    <section class="container">
+        <div class="product-card">
+            <img src="assets/img/mockup_dashboard_wide.png" alt="AI Ledger Analytics Dashboard" loading="lazy">
+            <div class="product-card-body">
+                <h3>Visual Ledger Analytics</h3>
+                <p>Transform thousands of rows of raw ledger data into actionable cash flow intelligence. Identify monthly trends, spot irregularities, and cut unnecessary overhead — all from one dashboard.</p>
             </div>
         </div>
+    </section>
 
-        <div class="surface-card" style="padding: 0; overflow: hidden; margin-bottom: 4rem; border: 1px solid var(--border);">
-            <img src="assets/img/hero_wide.png" alt="Secure Forensics Environment" style="width: 100%; display: block;" loading="lazy">
-            <div style="padding: 4rem;">
-                <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Bank-Grade Security</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">Your financial data is processed using AES-256 encryption within isolated execution environments. We do not store your raw statements.</p>
+    <!-- 5. How It Works -->
+    <section class="container" style="background: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); max-width: 100%; padding-left: 0; padding-right: 0;">
+        <div style="max-width: var(--container); margin: 0 auto; padding: 0 24px;">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title" style="margin-bottom: 3rem;">Three steps to clean ledger data.</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1. Upload</h3>
+                    <p>Drop any PDF or CSV bank statement into the dashboard. Our parser handles messy tables, missing borders, and multi-page layouts automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>2. Categorize</h3>
+                    <p>The AI engine reads every transaction description and assigns it to the correct accounting category using contextual financial understanding.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3. Export</h3>
+                    <p>Download your perfectly formatted, categorized spreadsheet in CSV, Excel, or QuickBooks-ready format. Review visual dashboards instantly.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-    </main>
-
-    <!-- Strong Call to Action -->
-    <section class="container text-center" style="padding-top: 2rem; padding-bottom: 6rem;">
-        <h2 style="font-size: 3.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 2rem;">Stop manual entry today.</h2>
+    <!-- 6. Call To Action -->
+    <section class="container text-center">
+        <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem);">Stop manual data entry today.</h2>
+        <p class="section-description" style="margin: 0 auto 2rem;">Start with a free trial. No credit card required.</p>
         <a href="tool.html" class="btn-primary btn-large">Start Parsing for Free</a>
-        <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.9rem;">No credit card required. 14-day full access.</p>
     </section>
 
+    <!-- 7. Footer -->
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
         <div class="f-links">
+            <a href="about.html">About</a>
             <a href="terms.html">Terms</a>
             <a href="privacy.html">Privacy</a>
             <a href="refund.html">Refunds</a>
         </div>
     </footer>
 
-    <script>
-        window.onscroll = function() {
-            var nav = document.getElementById('navbar');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-    <script src="chatbot.js?v=2"></script>
+    <script src="chatbot.js?v=3"></script>
 </body>
-
 </html>

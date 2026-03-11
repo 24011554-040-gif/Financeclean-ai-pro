@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>Try Clean AI - Financial Data Parsing Tool</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Try the Tool — FinanceClean AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="nav" id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;"><img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI</a>
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="FinanceClean AI"> FinanceClean</a>
+            <div class="nav-items">
+                <a href="index.html">Product</a>
+                <a href="about.html">About</a>
                 <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact</a>
-            <a href="tool.html" class="btn-primary">Try Tool</a>
-        </div>
-    </nav>
+                <a href="contact.html">Contact</a>
+                <a href="tool.html" class="btn-primary active">Try the Tool</a>
+            </div>
+        </nav>
+    </div>
 
     <header class="tool-header">
-        <h1>Try Clean AI</h1>
+        <h1>Try FinanceClean AI</h1>
         <p>Drop your bank statements below to instantly extract and categorize the data.</p>
     </header>
 
-    <!-- Embedded Streamlit App -->
     <main>
         <div class="iframe-container">
-            <!-- Live Streamlit Cloud URL -->
-            <iframe src="https://ai-finance-clean.streamlit.app/?embedded=true"
-                title="Clean AI Streamlit App"></iframe>
+            <iframe src="https://ai-finance-clean.streamlit.app/?embedded=true" title="Clean AI Streamlit App"></iframe>
         </div>
 
         <section class="instructions-section">
-            <div class="instructions-container">
+            <div style="max-width: 700px;">
                 <h2 class="instructions-title">Quick Start Guide</h2>
-
                 <div class="instruction-step">
                     <div class="step-icon">1</div>
                     <div class="step-content">
                         <h4>Upload your document</h4>
-                        <p>Use the interface above to select and upload your messy financial CSV or PDF statement. Wait
-                            a few seconds for our AI to initialize the parser.</p>
+                        <p>Select and upload your CSV or PDF bank statement. Our AI engine will initialize the parser automatically.</p>
                     </div>
                 </div>
-
                 <div class="instruction-step">
                     <div class="step-icon">2</div>
                     <div class="step-content">
-                        <h4>Review the parsed data table</h4>
-                        <p>Verify that columns such as Date, Description, Debit, and Credit have been successfully
-                            aligned and matched from the raw data.</p>
+                        <h4>Review the parsed data</h4>
+                        <p>Verify that columns such as Date, Description, Debit, and Credit have been successfully aligned from the raw data.</p>
                     </div>
                 </div>
-
                 <div class="instruction-step">
                     <div class="step-icon">3</div>
                     <div class="step-content">
-                        <h4>Generate visual insights</h4>
-                        <p>Browse through the interactive dashboard to see income vs. expense charts, and then securely
-                            export your completed, categorized spreadsheet.</p>
+                        <h4>Generate insights and export</h4>
+                        <p>Browse the interactive dashboard for income vs. expense charts, then export your categorized spreadsheet.</p>
                     </div>
                 </div>
             </div>
@@ -72,25 +61,8 @@
 
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
-        <div class="f-links">
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="refund.html">Refunds</a>
-        </div>
+        <div class="f-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a></div>
     </footer>
-    <script>
-        window.onscroll = function() {
-            var nav = document.getElementById('navbar');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-
-    <!-- Custom Clean AI Chatbot Widget -->
-    <script src="chatbot.js?v=2"></script>
+    <script src="chatbot.js?v=3"></script>
 </body>
-
 </html>

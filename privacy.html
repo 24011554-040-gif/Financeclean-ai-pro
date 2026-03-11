@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>Privacy Policy - Clean AI Finance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Privacy Policy — FinanceClean AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="nav" id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
-            <img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI
-        </a>
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact.html">Contact</a>
-            <a href="tool.html" class="btn-primary">Try Tool</a>
-        </div>
-    </nav>
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="FinanceClean AI"> FinanceClean</a>
+            <div class="nav-items">
+                <a href="index.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="tool.html" class="btn-primary">Try the Tool</a>
+            </div>
+        </nav>
+    </div>
 
     <header class="page-header">
         <h1 class="page-title">Privacy Policy</h1>
         <p class="last-updated">Last Updated: March 2026</p>
     </header>
 
-    <main class="container container-narrow">
+    <main class="container container-narrow" style="padding-top: 2rem;">
         <div class="legal-content">
             <h2>1. Introduction</h2>
             <p>At Clean AI Finance ("Clean AI"), we take the privacy and security of your financial data very seriously. This Privacy Policy outlines how we collect, use, process, and protect your information when you use our website and parsing tool.</p>
@@ -37,50 +35,34 @@
             <p><strong>Financial Documents:</strong> When you use our tool, you upload PDF or CSV bank statements. These are temporarily processed by our servers to extract, clean, and categorize the data.</p>
             <p><strong>Account Information:</strong> If you sign up for an account or subscription, we collect basic information such as your name, email address, and payment history.</p>
 
-            <h2>3. How We Process Your Data (The Important Part)</h2>
-            <p>We built Clean AI with security in mind. Our processing pipeline works as follows:</p>
+            <h2>3. How We Process Your Data</h2>
             <ul>
-                <strong>Transient Processing:</strong> Your uploaded PDF and CSV files are processed in memory during your active session. We use these files solely to generate the structured data, dashboards, and exportable spreadsheets.
-                <strong>No Deep Storage:</strong> We do not permanently store your raw bank statements into an accessible database. We process, categorize, and return the data directly to you in your session.
-                <strong>AI Parsing:</strong> We use Large Language Models (LLMs) to intelligently categorize transactions. The data sent to these models is strictly for your immediate parsing request and is not used to train global public models.
-            </div>
+                <li><strong>Transient Processing:</strong> Your uploaded PDF and CSV files are processed in memory during your active session. We use these files solely to generate structured data, dashboards, and exportable spreadsheets.</li>
+                <li><strong>No Deep Storage:</strong> We do not permanently store your raw bank statements. We process, categorize, and return the data directly to you in your session.</li>
+                <li><strong>AI Parsing:</strong> We use Large Language Models (LLMs) to intelligently categorize transactions. The data sent to these models is strictly for your immediate parsing request and is not used to train public models.</li>
+            </ul>
 
             <h2>4. Third-Party Services</h2>
-            <p>We use trusted third-party services to operate our business securely:</p>
             <ul>
-                <strong>Paddle:</strong> Serves as our Merchant of Record and handles secure payment processing. We do not store your credit card information on our servers.
-                <strong>Streamlit / Hosting Providers:</strong> We use secure cloud hosting providers to run our python-based data analytics application.
-            </div>
+                <li><strong>Paddle:</strong> Serves as our Merchant of Record and handles secure payment processing. We do not store your credit card information.</li>
+                <li><strong>Streamlit / Hosting Providers:</strong> We use secure cloud hosting providers to run our data analytics application.</li>
+            </ul>
 
             <h2>5. Data Disclosure</h2>
-            <p>We do not sell, trade, or rent your personal or financial information to third parties. We may only disclose data if reasonably necessary to comply with a legal obligation, protect our rights, or investigate fraud.</p>
+            <p>We do not sell, trade, or rent your personal or financial information to third parties. We may only disclose data if necessary to comply with a legal obligation, protect our rights, or investigate fraud.</p>
 
             <h2>6. Your Rights</h2>
             <p>You have the right to request access to, correction of, or deletion of your personal data stored with us. Since we do not permanently store your uploaded bank statements, downloading your parsed results effectively removes it from our active processing pipeline.</p>
 
             <h2>7. Contact Us</h2>
-            <p>If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at alihaiderfinance.cfo@gmail.com.</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:alihaiderfinance.cfo@gmail.com">alihaiderfinance.cfo@gmail.com</a>.</p>
         </div>
     </main>
 
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
-        <div class="f-links">
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="refund.html">Refunds</a>
-        </div>
+        <div class="f-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a></div>
     </footer>
-    <script>
-        window.onscroll = function() {
-            var nav = document.getElementById('navbar');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-    <script src="chatbot.js?v=2"></script>
+    <script src="chatbot.js?v=3"></script>
 </body>
 </html>

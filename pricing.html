@@ -4,97 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <title>Pricing - Clean AI Finance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Pricing — FinanceClean AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="nav" id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
-            <img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI
-        </a>
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="pricing.html" class="active">Pricing</a>
-            <a href="contact.html">Contact</a>
-            <a href="tool.html" class="btn-primary">Try Tool</a>
-        </div>
-    </nav>
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="FinanceClean AI"> FinanceClean</a>
+            <div class="nav-items">
+                <a href="index.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html" class="active">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="tool.html" class="btn-primary">Try the Tool</a>
+            </div>
+        </nav>
+    </div>
 
     <header class="page-header">
         <h1 class="page-title">Simple, Transparent Pricing</h1>
-        <p class="page-subtitle">Automate your financial data workflows. Choose the plan that fits your needs.</p>
+        <p class="page-subtitle" style="margin: 0.75rem auto 0;">Choose the plan that fits your workflow. Start free, upgrade any time.</p>
     </header>
 
-    <main class="container container-narrow">
+    <main class="container" style="padding-top: 2rem;">
         <div class="pricing-grid">
-            <!-- Free Plan -->
             <div class="pricing-card">
-                <h3 class="plan-name">Starter (Free Trial)</h3>
+                <h3 class="plan-name">Starter</h3>
                 <div class="plan-price">$0<span>/forever</span></div>
-                <p class="plan-desc">Perfect to test the waters and see the magic of Clean AI.</p>
+                <p class="plan-desc">Test the waters. Parse up to 3 statements free.</p>
                 <ul class="plan-features">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Up to 3 statements free
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> PDF & CSV Parsing
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Categorization
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Spreadsheet Export
-                </div>
-                <a href="tool.html" class="btn-full btn-outline">Try for Free</a>
+                    <li>✓ Up to 3 statements</li>
+                    <li>✓ PDF &amp; CSV parsing</li>
+                    <li>✓ Basic categorization</li>
+                    <li>✓ Spreadsheet export</li>
+                </ul>
+                <a href="tool.html" class="btn-outline btn-full">Try for Free</a>
             </div>
 
-            <!-- Pro Plan -->
             <div class="pricing-card popular">
                 <div class="popular-badge">Most Popular</div>
-                <h3 class="plan-name">Pro Professional</h3>
+                <h3 class="plan-name">Pro</h3>
                 <div class="plan-price">$29<span>/month</span></div>
-                <p class="plan-desc">For freelancers, small businesses, and busy accountants.</p>
+                <p class="plan-desc">For freelancers, small businesses, and accountants.</p>
                 <ul class="plan-features">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited statements
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced AI Categorization
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Visual Flow Dashboards
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority Processing Speed
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Email Support
-                </div>
-                <a href="tool.html" class="btn-full btn-primary">Subscribe Now</a>
+                    <li>✓ Unlimited statements</li>
+                    <li>✓ Advanced AI categorization</li>
+                    <li>✓ Visual flow dashboards</li>
+                    <li>✓ Priority processing</li>
+                    <li>✓ Email support</li>
+                </ul>
+                <a href="tool.html" class="btn-primary btn-full">Subscribe Now</a>
             </div>
 
-            <!-- Enterprise Plan -->
             <div class="pricing-card">
                 <h3 class="plan-name">Enterprise</h3>
                 <div class="plan-price">Custom</div>
-                <p class="plan-desc">For large firms needing API access and custom integrations.</p>
+                <p class="plan-desc">For large firms needing API access and integrations.</p>
                 <ul class="plan-features">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Everything in Pro
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct API Integration
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Prompting Rules
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated Account Manager
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> SLA Guarantee
-                </div>
-                <a href="contact.html" class="btn-full btn-outline">Contact Sales</a>
+                    <li>✓ Everything in Pro</li>
+                    <li>✓ Direct API integration</li>
+                    <li>✓ Custom prompting rules</li>
+                    <li>✓ Dedicated account manager</li>
+                    <li>✓ SLA guarantee</li>
+                </ul>
+                <a href="contact.html" class="btn-outline btn-full">Contact Sales</a>
             </div>
         </div>
     </main>
 
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
-        <div class="f-links">
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="refund.html">Refunds</a>
-        </div>
+        <div class="f-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a></div>
     </footer>
-    <script>
-        window.onscroll = function() {
-            var nav = document.getElementById('navbar');
-            if (window.pageYOffset > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-    </script>
-    <script src="chatbot.js?v=2"></script>
+    <script src="chatbot.js?v=3"></script>
 </body>
 </html>
