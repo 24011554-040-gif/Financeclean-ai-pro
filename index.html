@@ -5,296 +5,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Clean AI Finance - Minimalist Financial Automation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>FinanceClean AI — Precision Financial Engineering</title>
+    <!-- Premium Font: Inter for UI precision -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-glow: rgba(37, 99, 235, 0.4);
-            --bg-dark: #0f172a;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --font-family: 'Outfit', sans-serif;
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --border: rgba(255, 255, 255, 0.1);
+            --primary: #0052FF; /* Clean, professional Sapphire */
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --font: 'Inter', sans-serif;
+            --transition: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: var(--font-family);
+            font-family: var(--font);
+            background-color: var(--bg);
             color: var(--text-main);
-            background-color: var(--bg-dark);
-            line-height: 1.6;
+            line-height: 1.5;
             overflow-x: hidden;
         }
 
-        /* --- MODERN NAVIGATION --- */
-        .navbar {
-            backdrop-filter: blur(12px);
-            background: rgba(15, 23, 42, 0.7);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1.25rem 5%;
+        /* --- Minimal Navbar --- */
+        .nav {
+            padding: 1.5rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s var(--transition);
         }
 
-        .nav-brand {
-            font-size: 1.5rem;
+        .nav.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 8%;
+        }
+
+        .logo {
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
+        .logo img { height: 24px; filter: brightness(1.2); }
 
-        .nav-links a {
+        .nav-items { display: flex; gap: 3rem; align-items: center; }
+        .nav-items a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
             font-weight: 500;
-            color: var(--text-muted);
             transition: color 0.3s;
         }
+        .nav-items a:hover { color: white; }
 
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .btn-nav {
-            background: var(--primary);
-            color: white !important;
-            padding: 0.6rem 1.5rem;
-            border-radius: 99px;
+        .btn-zip {
+            background: white;
+            color: black;
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
             font-weight: 600;
-            box-shadow: 0 0 20px var(--primary-glow);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: transform 0.2s;
         }
+        .btn-zip:hover { transform: scale(1.02); }
 
-        /* --- ULTRA-WIDE HERO --- */
-        .hero-banner {
-            width: 100%;
-            height: 450px;
-            background: url('hero_wide.png') center/cover no-repeat;
-            position: relative;
+        /* --- ELITE HERO --- */
+        .hero {
+            padding-top: 12rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .hero-banner::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(0deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
             text-align: center;
-            max-width: 900px;
-            padding: 0 5%;
+            padding-bottom: 2rem;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 0.4rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            max-width: 900px;
             margin-bottom: 2rem;
         }
 
-        /* --- PRODUCT SHOWCASE (WIDE) --- */
-        .showcase-container {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3.5rem;
+            font-weight: 400;
         }
 
-        .mockup-wrap {
-            width: 100%;
-            margin-bottom: 4rem;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            background: var(--bg-card);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        /* Hero Image Container */
+        .hero-viz {
+            width: 85%;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            position: relative;
+            perspective: 2000px;
         }
 
-        .mockup-wrap img {
+        .hero-viz img {
             width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.8);
+            transform: rotateX(5deg);
+            transition: transform 0.5s var(--transition);
+        }
+
+        .hero-viz:hover img {
+            transform: rotateX(0deg);
+        }
+
+        /* --- MINIMAL SHOWCASE --- */
+        .section { padding: 10rem 8%; }
+
+        .section-tag {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
             display: block;
-            opacity: 0.9;
-            transition: opacity 0.5s;
         }
 
-        .mockup-wrap:hover img {
-            opacity: 1;
+        .section-head {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 4rem;
+            max-width: 800px;
         }
 
-        /* --- GLASS FEATURES --- */
-        .features-grid {
+        .grid-feature {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+            gap: 4rem;
         }
 
-        .glass-card {
-            padding: 3rem;
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary);
-        }
-
-        .icon-box {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .glass-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .glass-card p {
-            color: var(--text-muted);
-        }
-
-        /* --- CALL TO ACTION --- */
-        .cta-section {
-            padding: 8rem 5%;
-            text-align: center;
-        }
-
-        .btn-huge {
+        .f-item h3 {
             font-size: 1.25rem;
-            padding: 1.2rem 3.5rem;
-            background: white;
-            color: var(--bg-dark);
-            border-radius: 99px;
-            font-weight: 700;
-            transition: all 0.3s;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .btn-huge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        .f-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
+        /* --- WIDE MOCKUP CARDS --- */
+        .wide-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 6rem;
+            transition: border-color 0.3s;
+        }
+
+        .wide-card:hover { border-color: var(--primary); }
+
+        .wide-card img { width: 100%; opacity: 0.8; transition: opacity 0.5s; }
+        .wide-card:hover img { opacity: 1; }
+
+        .card-info { padding: 3rem; }
+        .card-info h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .card-info p { color: var(--text-muted); }
+
+        /* --- FOOTER --- */
         footer {
-            padding: 4rem 5%;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
+            padding: 6rem 8%;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        @media (max-width: 900px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .hero-banner { height: 300px; }
+        .f-links { display: flex; gap: 2rem; }
+        .f-links a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        .f-links a:hover { color: white; }
+
+        @media (max-width: 1000px) {
+            .nav-items { display: none; }
+            .grid-feature { grid-template-columns: 1fr; }
+            .hero-viz { width: 95%; }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">
-            <img src="logo.png" alt="logo" style="height: 28px;">
-            Clean AI
+    <nav class="nav" id="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+            <img src="logo.png" alt="logo">
+            FinanceClean
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
-        </ul>
+        <div class="nav-items">
+            <a href="index.html">Product</a>
+            <a href="about.html">Architecture</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="tool.html" class="btn-zip">Try the Tool</a>
+        </div>
     </nav>
 
-    <!-- CLASSY WIDE HERO -->
-    <section class="hero-banner">
-        <div class="hero-content">
-            <h1>Financial Clarity at Scale</h1>
-            <p>Clean AI extracts and categorizes millions of transactions from messy bank statements with surgical precision.</p>
+    <header class="hero">
+        <div class="pill">v2.0 Now Live</div>
+        <h1>Automate your financial forensics.</h1>
+        <p>Expert-grade bank statement parsing and categorization. Built for forensic accountants and financial engineers.</p>
+        <a href="tool.html" class="btn-zip" style="padding: 1rem 3rem; font-size: 1rem;">Launch Dashboard</a>
+
+        <div class="hero-viz">
+            <img src="mockup_premium_wide.png" alt="SaaS Dashboard Preview">
+        </div>
+    </header>
+
+    <section class="section">
+        <span class="section-tag">Core Capabilities</span>
+        <h2 class="section-head">Built for precision, engineered for scale.</h2>
+
+        <div class="grid-feature">
+            <div class="f-item">
+                <h3>Neural OCR</h3>
+                <p>Proprietary vision models reconstruct misaligned, borderless, and split transaction tables with 99.8% accuracy.</p>
+            </div>
+            <div class="f-item">
+                <h3>Contextual Insights</h3>
+                <p>LLM-powered engines categorize transactions using deep financial context, not just simple keywords.</p>
+            </div>
+            <div class="f-item">
+                <h3>Anomaly Shield</h3>
+                <p>Automatic detection of duplicate payments, rapid sequential charges, and unusual spending behavior.</p>
+            </div>
         </div>
     </section>
 
-    <main class="showcase-container">
+    <main style="padding: 0 8% 10rem;">
         
-        <!-- DASHBOARD DISPLAY -->
-        <div class="mockup-wrap">
-            <img src="mockup_premium_wide.png" alt="Premium Dashboard">
-        </div>
-
-        <div class="features-grid">
-            <div class="glass-card">
-                <div class="icon-box">⚡</div>
-                <h3>Instant Parsing</h3>
-                <p>Advanced OCR cleans misaligned tables and broken text in under 60 seconds.</p>
-            </div>
-            <div class="glass-card">
-                <div class="icon-box">🧠</div>
-                <h3>AI Insights</h3>
-                <p>Deep-learning categorizes every dollar spent into 25+ accounting-ready tax buckets.</p>
-            </div>
-            <div class="glass-card">
-                <div class="icon-box">🔒</div>
-                <h3>Enterprise Security</h3>
-                <p>Your data is processed with cold-storage security and end-to-end encryption.</p>
+        <div class="wide-card">
+            <img src="mockup_dashboard_wide.png" alt="Analytics Insight">
+            <div class="card-info">
+                <h4>Visual Analytics</h4>
+                <p>Transform raw ledger data into actionable cash flow intelligence instantly.</p>
             </div>
         </div>
 
-        <!-- SECONDARY WIDE DISPLAY -->
-        <div style="margin-top: 6rem;" class="mockup-wrap">
-            <img src="mockup_dashboard_wide.png" alt="Analytics Dashboard">
+        <div class="wide-card" style="margin-bottom: 0;">
+            <img src="hero_wide.png" alt="Secure Forensics">
+            <div class="card-info">
+                <h4>Secure Environments</h4>
+                <p>All data is processed using AES-256 encryption within isolated execution environments.</p>
+            </div>
         </div>
 
     </main>
 
-    <section class="cta-section">
-        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Ready to automate your books?</h2>
-        <a href="tool.html" class="btn-huge">Try the Tool for Free</a>
-    </section>
-
     <footer>
-        <p>&copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.</p>
-        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; font-size: 0.8rem;">
+        <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
+        <div class="f-links">
             <a href="terms.html">Terms</a>
             <a href="privacy.html">Privacy</a>
             <a href="refund.html">Refunds</a>
         </div>
     </footer>
 
+    <script>
+        window.onscroll = function() {
+            var nav = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
     <script src="chatbot.js?v=2"></script>
 </body>
 
