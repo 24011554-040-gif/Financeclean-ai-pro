@@ -3,87 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>Pricing - Clean AI Finance</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
-            --secondary-color: #0f172a;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --font-family: 'Inter', sans-serif;
-            --border-color: #e2e8f0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-family); color: var(--text-main); background-color: var(--bg-body); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; gap: 0.5rem; }
-        .nav-brand-icon { color: var(--primary-color); }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-        .nav-links a { font-weight: 500; color: var(--text-light); }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
-        .btn-nav { background-color: var(--primary-color); color: #ffffff !important; padding: 0.5rem 1.25rem; border-radius: 6px; }
-        .btn-nav:hover { background-color: var(--primary-hover); transform: translateY(-1px); }
-        
-        .page-header { padding: 5rem 5% 3rem; background-color: var(--bg-card); text-align: center; border-bottom: 1px solid var(--border-color); }
-        .page-title { font-size: 3rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem; }
-        .page-subtitle { font-size: 1.25rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
-        
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .pricing-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.5rem; display: flex; flex-direction: column; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); }
-        .pricing-card.popular { border-color: var(--primary-color); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1); }
-        .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; }
-        
-        .plan-name { font-size: 1.25rem; font-weight: 600; color: var(--secondary-color); margin-bottom: 0.5rem; }
-        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; display: flex; align-items: flex-baseline; gap: 4px; }
-        .plan-price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-        .plan-desc { color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem; }
-        
-        .plan-features { list-style: none; margin-bottom: 2.5rem; flex: 1; }
-        .plan-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem; color: var(--text-main); font-size: 0.95rem; }
-        .plan-features li svg { width: 20px; height: 20px; color: #10b981; flex-shrink: 0; }
-        
-        .btn-full { width: 100%; display: block; text-align: center; padding: 1rem; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background 0.2s; }
-        .btn-outline { background: transparent; border: 2px solid var(--border-color); color: var(--secondary-color); }
-        .btn-outline:hover { border-color: var(--primary-color); color: var(--primary-color); }
-        .btn-primary { background: var(--primary-color); border: 2px solid var(--primary-color); color: white; }
-        .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: white; }
-        
-        footer { background-color: var(--secondary-color); color: #ffffff; padding: 3rem 5%; margin-top: auto; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-        .footer-logo { font-size: 1.5rem; font-weight: 700; color: #ffffff; }
-        .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; justify-content: center; }
-        .footer-links a { color: #cbd5e1; font-size: 0.95rem; }
-        .footer-links a:hover { color: #ffffff; }
-        .copyright { color: #94a3b8; font-size: 0.875rem; text-align: center; }
-        
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 1rem; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-            .page-title { font-size: 2.5rem; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">
-            <img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI
+    <nav class="nav" id="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+            <img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="pricing.html" class="active">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
-        </ul>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="tool.html" class="btn-primary">Try Tool</a>
+        </div>
     </nav>
 
     <header class="page-header">
@@ -91,7 +28,7 @@
         <p class="page-subtitle">Automate your financial data workflows. Choose the plan that fits your needs.</p>
     </header>
 
-    <main class="container">
+    <main class="container container-narrow">
         <div class="pricing-grid">
             <!-- Free Plan -->
             <div class="pricing-card">
@@ -99,11 +36,11 @@
                 <div class="plan-price">$0<span>/forever</span></div>
                 <p class="plan-desc">Perfect to test the waters and see the magic of Clean AI.</p>
                 <ul class="plan-features">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Up to 3 statements free</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> PDF & CSV Parsing</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Categorization</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Spreadsheet Export</li>
-                </ul>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Up to 3 statements free
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> PDF & CSV Parsing
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Categorization
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Spreadsheet Export
+                </div>
                 <a href="tool.html" class="btn-full btn-outline">Try for Free</a>
             </div>
 
@@ -114,12 +51,12 @@
                 <div class="plan-price">$29<span>/month</span></div>
                 <p class="plan-desc">For freelancers, small businesses, and busy accountants.</p>
                 <ul class="plan-features">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited statements</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced AI Categorization</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Visual Flow Dashboards</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority Processing Speed</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Email Support</li>
-                </ul>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited statements
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced AI Categorization
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Visual Flow Dashboards
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority Processing Speed
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Email Support
+                </div>
                 <a href="tool.html" class="btn-full btn-primary">Subscribe Now</a>
             </div>
 
@@ -129,35 +66,35 @@
                 <div class="plan-price">Custom</div>
                 <p class="plan-desc">For large firms needing API access and custom integrations.</p>
                 <ul class="plan-features">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Everything in Pro</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct API Integration</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Prompting Rules</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated Account Manager</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> SLA Guarantee</li>
-                </ul>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Everything in Pro
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct API Integration
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Prompting Rules
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated Account Manager
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> SLA Guarantee
+                </div>
                 <a href="contact.html" class="btn-full btn-outline">Contact Sales</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo"><img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI</div>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="tool.html">Tool</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="refund.html">Refund Policy</a></li>
-            </ul>
-            <div class="copyright">
-                &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
-            </div>
+        <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
+        <div class="f-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="refund.html">Refunds</a>
         </div>
     </footer>
+    <script>
+        window.onscroll = function() {
+            var nav = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
     <script src="chatbot.js?v=2"></script>
 </body>
 </html>

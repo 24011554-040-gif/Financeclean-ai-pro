@@ -1,0 +1,196 @@
+/* =========================================================================
+   GLOBAL DESIGN SYSTEM: FINANCECLEAN AI
+   Agent 2: Design System Architect
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg: #000000;
+    --surface: #0a0a0a;
+    --border: rgba(255, 255, 255, 0.1);
+    --primary: #0052FF;
+    --primary-hover: #0043d1;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    
+    /* Typography */
+    --font: 'Inter', sans-serif;
+    
+    /* Animation */
+    --transition: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* --- NAVIGATION --- */
+.nav {
+    padding: 1.5rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s var(--transition);
+}
+
+.nav.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 8%;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo img { 
+    height: 24px; 
+    filter: brightness(1.2); 
+}
+
+.nav-items { 
+    display: flex; 
+    gap: 3rem; 
+    align-items: center; 
+}
+
+.nav-items a { 
+    color: var(--text-muted); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover, .nav-items a.active { 
+    color: white; 
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    background: white;
+    color: black;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary:hover { 
+    transform: scale(1.02); 
+}
+
+.btn-large {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+}
+
+/* --- LAYOUT CONTAINERS --- */
+.container {
+    padding: 10rem 8% 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- TYPOGRAPHY (Agent 7 integration) --- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+/* --- CONTENT CARDS --- */
+.surface-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 6rem 8%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background-color: var(--bg);
+    margin-top: 5rem;
+}
+
+.f-links { 
+    display: flex; 
+    gap: 2rem; 
+}
+
+.f-links a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.2s; 
+}
+
+.f-links a:hover { 
+    color: white; 
+}
+
+/* --- UTILITIES --- */
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-4 { margin-bottom: 4rem; }
+.text-primary { color: var(--primary); }
+
+@media (max-width: 1000px) {
+    .nav-items { display: none; }
+    footer { flex-direction: column; gap: 2rem; }
+}

@@ -4,295 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>FinanceClean AI — Precision Financial Engineering</title>
     <!-- Premium Font: Inter for UI precision -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #000000;
-            --surface: #0a0a0a;
-            --border: rgba(255, 255, 255, 0.1);
-            --primary: #0052FF; /* Clean, professional Sapphire */
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            --font: 'Inter', sans-serif;
-            --transition: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            font-family: var(--font);
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* --- Minimal Navbar --- */
-        .nav {
-            padding: 1.5rem 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid transparent;
-            transition: all 0.4s var(--transition);
-        }
-
-        .nav.scrolled {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 8%;
-        }
-
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img { height: 24px; filter: brightness(1.2); }
-
-        .nav-items { display: flex; gap: 3rem; align-items: center; }
-        .nav-items a { 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-items a:hover { color: white; }
-
-        .btn-zip {
-            background: white;
-            color: black;
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        .btn-zip:hover { transform: scale(1.02); }
-
-        /* --- ELITE HERO --- */
-        .hero {
-            padding-top: 12rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 2rem;
-        }
-
-        .pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            padding: 0.4rem 1.2rem;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-            max-width: 900px;
-            margin-bottom: 2rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 3.5rem;
-            font-weight: 400;
-        }
-
-        /* Hero Image Container */
-        .hero-viz {
-            width: 85%;
-            max-width: 1200px;
-            margin: 4rem auto 0;
-            position: relative;
-            perspective: 2000px;
-        }
-
-        .hero-viz img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.8);
-            transform: rotateX(5deg);
-            transition: transform 0.5s var(--transition);
-        }
-
-        .hero-viz:hover img {
-            transform: rotateX(0deg);
-        }
-
-        /* --- MINIMAL SHOWCASE --- */
-        .section { padding: 10rem 8%; }
-
-        .section-tag {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .section-head {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 4rem;
-            max-width: 800px;
-        }
-
-        .grid-feature {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-        }
-
-        .f-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .f-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- WIDE MOCKUP CARDS --- */
-        .wide-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 6rem;
-            transition: border-color 0.3s;
-        }
-
-        .wide-card:hover { border-color: var(--primary); }
-
-        .wide-card img { width: 100%; opacity: 0.8; transition: opacity 0.5s; }
-        .wide-card:hover img { opacity: 1; }
-
-        .card-info { padding: 3rem; }
-        .card-info h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .card-info p { color: var(--text-muted); }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 6rem 8%;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .f-links { display: flex; gap: 2rem; }
-        .f-links a { text-decoration: none; color: inherit; transition: color 0.2s; }
-        .f-links a:hover { color: white; }
-
-        @media (max-width: 1000px) {
-            .nav-items { display: none; }
-            .grid-feature { grid-template-columns: 1fr; }
-            .hero-viz { width: 95%; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav class="nav" id="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
-            <img src="logo.png" alt="logo">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.png" alt="logo">
             FinanceClean
         </a>
         <div class="nav-items">
-            <a href="index.html">Product</a>
+            <a href="#product">Product</a>
             <a href="about.html">Architecture</a>
             <a href="pricing.html">Pricing</a>
-            <a href="tool.html" class="btn-zip">Try the Tool</a>
+            <a href="tool.html" class="btn-primary">Try the Tool</a>
         </div>
     </nav>
 
+    <!-- 1. What the product does -->
     <header class="hero">
-        <div class="pill">v2.0 Now Live</div>
-        <h1>Automate your financial forensics.</h1>
-        <p>Expert-grade bank statement parsing and categorization. Built for forensic accountants and financial engineers.</p>
-        <a href="tool.html" class="btn-zip" style="padding: 1rem 3rem; font-size: 1rem;">Launch Dashboard</a>
+        <div class="pill">v2.0 Model Now Online</div>
+        <h1 class="page-title">Automate your financial forensics.</h1>
+        <p class="page-subtitle" style="max-width: 650px; margin: 0 auto 3.5rem;">
+            Turn messy, unstructured bank statements and PDFs into actionable, categorized ledger data instantly.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+            <a href="tool.html" class="btn-primary btn-large">Launch Dashboard</a>
+            <a href="#product" class="btn-primary btn-large" style="background: transparent; color: white; border: 1px solid var(--border);">See How It Works</a>
+        </div>
 
         <div class="hero-viz">
-            <img src="mockup_premium_wide.png" alt="SaaS Dashboard Preview">
+            <img src="assets/img/mockup_premium_wide.png" alt="SaaS Dashboard Preview" loading="lazy">
         </div>
     </header>
 
-    <section class="section">
-        <span class="section-tag">Core Capabilities</span>
-        <h2 class="section-head">Built for precision, engineered for scale.</h2>
+    <!-- 2. Who it is for & Social Trust -->
+    <section class="container text-center" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 2rem;">Trusted by forward-thinking teams</p>
+        <div style="display: flex; justify-content: center; gap: 4rem; opacity: 0.5; filter: grayscale(100%); flex-wrap: wrap;">
+            <h3>Acme Corp</h3>
+            <h3>GlobalTech</h3>
+            <h3>Stark Ind</h3>
+            <h3>Wayne Ent</h3>
+        </div>
+    </section>
 
-        <div class="grid-feature">
+    <!-- 3. Feature List (Capabilities) -->
+    <section id="product" class="container">
+        <span class="section-tag" style="text-transform: uppercase; letter-spacing: 1px; color: var(--primary); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 1rem;">Core Capabilities</span>
+        <h2 class="page-title" style="font-size: 3rem; margin-bottom: 4rem; max-width: 800px;">Built for precision.<br>Engineered for scale.</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;">
             <div class="f-item">
-                <h3>Neural OCR</h3>
-                <p>Proprietary vision models reconstruct misaligned, borderless, and split transaction tables with 99.8% accuracy.</p>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Neural OCR Parsing</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Proprietary vision models cleanly extract data from misaligned, borderless, and split transaction tables where traditional OCR fails.</p>
             </div>
             <div class="f-item">
-                <h3>Contextual Insights</h3>
-                <p>LLM-powered engines categorize transactions using deep financial context, not just simple keywords.</p>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Contextual A.I. Engine</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Large Language Models categorize transactions using deep financial context, automatically grouping spending into 25+ tax-ready buckets.</p>
             </div>
             <div class="f-item">
-                <h3>Anomaly Shield</h3>
-                <p>Automatic detection of duplicate payments, rapid sequential charges, and unusual spending behavior.</p>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Anomaly Shield</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Statistical models detect duplicate payments, rapid sequential charges, and unusual spending behavior in under 60 seconds.</p>
             </div>
         </div>
     </section>
 
-    <main style="padding: 0 8% 10rem;">
+    <!-- Deep Dive Mockups -->
+    <main class="container" style="padding-top: 2rem;">
         
-        <div class="wide-card">
-            <img src="mockup_dashboard_wide.png" alt="Analytics Insight">
-            <div class="card-info">
-                <h4>Visual Analytics</h4>
-                <p>Transform raw ledger data into actionable cash flow intelligence instantly.</p>
+        <div class="surface-card" style="padding: 0; overflow: hidden; margin-bottom: 8rem; border: 1px solid var(--border);">
+            <img src="assets/img/mockup_dashboard_wide.png" alt="AI Assisted Ledger Analytics" style="width: 100%; display: block;" loading="lazy">
+            <div style="padding: 4rem;">
+                <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Visual Ledger Analytics</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">Transform thousands of rows of raw ledger data into actionable cash flow intelligence. Identify monthly trends and cut unnecessary overhead instantly.</p>
             </div>
         </div>
 
-        <div class="wide-card" style="margin-bottom: 0;">
-            <img src="hero_wide.png" alt="Secure Forensics">
-            <div class="card-info">
-                <h4>Secure Environments</h4>
-                <p>All data is processed using AES-256 encryption within isolated execution environments.</p>
+        <div class="surface-card" style="padding: 0; overflow: hidden; margin-bottom: 4rem; border: 1px solid var(--border);">
+            <img src="assets/img/hero_wide.png" alt="Secure Forensics Environment" style="width: 100%; display: block;" loading="lazy">
+            <div style="padding: 4rem;">
+                <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Bank-Grade Security</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">Your financial data is processed using AES-256 encryption within isolated execution environments. We do not store your raw statements.</p>
             </div>
         </div>
 
     </main>
+
+    <!-- Strong Call to Action -->
+    <section class="container text-center" style="padding-top: 2rem; padding-bottom: 6rem;">
+        <h2 style="font-size: 3.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 2rem;">Stop manual entry today.</h2>
+        <a href="tool.html" class="btn-primary btn-large">Start Parsing for Free</a>
+        <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.9rem;">No credit card required. 14-day full access.</p>
+    </section>
 
     <footer>
         <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>

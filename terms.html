@@ -3,70 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>Terms of Service - Clean AI Finance</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
-            --secondary-color: #0f172a;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --font-family: 'Inter', sans-serif;
-            --border-color: #e2e8f0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-family); color: var(--text-main); background-color: var(--bg-body); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; gap: 0.5rem; }
-        .nav-brand-icon { color: var(--primary-color); }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-        .nav-links a { font-weight: 500; color: var(--text-light); }
-        .nav-links a:hover { color: var(--primary-color); }
-        .btn-nav { background-color: var(--primary-color); color: #ffffff !important; padding: 0.5rem 1.25rem; border-radius: 6px; }
-        .btn-nav:hover { background-color: var(--primary-hover); }
-        
-        .page-header { padding: 4rem 5% 2rem; background-color: var(--bg-card); text-align: center; border-bottom: 1px solid var(--border-color); }
-        .page-title { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; }
-        .last-updated { color: var(--text-light); font-size: 0.95rem; }
-        
-        .container { max-width: 800px; margin: 0 auto; padding: 3rem 5%; background: var(--bg-card); border-radius: 12px; margin-top: 2rem; margin-bottom: 3rem; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .legal-content h2 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 2rem; margin-bottom: 1rem; }
-        .legal-content h2:first-child { margin-top: 0; }
-        .legal-content p { margin-bottom: 1rem; }
-        .legal-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        .legal-content li { margin-bottom: 0.5rem; }
-        
-        footer { background-color: var(--secondary-color); color: #ffffff; padding: 3rem 5%; margin-top: auto; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-        .footer-logo { font-size: 1.5rem; font-weight: 700; color: #ffffff; }
-        .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; justify-content: center; }
-        .footer-links a { color: #cbd5e1; font-size: 0.95rem; }
-        .footer-links a:hover { color: #ffffff; }
-        .copyright { color: #94a3b8; font-size: 0.875rem; text-align: center; }
-        
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 1rem; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">
-            <img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI
+    <nav class="nav" id="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+            <img src="assets/img/logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;" loading="lazy"> Clean AI
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
-        </ul>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="tool.html" class="btn-primary">Try Tool</a>
+        </div>
     </nav>
 
     <header class="page-header">
@@ -74,7 +28,7 @@
         <p class="last-updated">Last Updated: March 2026</p>
     </header>
 
-    <main class="container">
+    <main class="container container-narrow">
         <div class="legal-content">
             <h2>1. Acceptance of Terms</h2>
             <p>By accessing and using Clean AI Finance ("Clean AI", "we", "us", or "our"), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.</p>
@@ -84,10 +38,10 @@
 
             <h2>3. User Responsibilities</h2>
             <ul>
-                <li>You agree that you have the right and authority to upload and process the financial documents you submit.</li>
-                <li>You will not use Clean AI for any illegal or unauthorized purpose.</li>
-                <li>You are responsible for reviewing the accuracy of the categorized data before relying on it for accounting or tax purposes. Clean AI is an AI-assisted tool and may occasionally miscategorize transactions.</li>
-            </ul>
+                You agree that you have the right and authority to upload and process the financial documents you submit.
+                You will not use Clean AI for any illegal or unauthorized purpose.
+                You are responsible for reviewing the accuracy of the categorized data before relying on it for accounting or tax purposes. Clean AI is an AI-assisted tool and may occasionally miscategorize transactions.
+            </div>
 
             <h2>4. Data and Privacy</h2>
             <p>Your privacy is important to us. The financial data you upload is processed temporarily to generate your dashboard and clean exports. For full details on how we handle your data, please see our Privacy Policy.</p>
@@ -111,23 +65,23 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo"><img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI</div>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="tool.html">Tool</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="refund.html">Refund Policy</a></li>
-            </ul>
-            <div class="copyright">
-                &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
-            </div>
+        <div>&copy; 2026 FinanceClean AI. All rights reserved.</div>
+        <div class="f-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="refund.html">Refunds</a>
         </div>
     </footer>
+    <script>
+        window.onscroll = function() {
+            var nav = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
     <script src="chatbot.js?v=2"></script>
 </body>
 </html>
