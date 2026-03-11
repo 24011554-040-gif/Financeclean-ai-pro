@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Clean AI Finance - Automate Your Financial Workflows</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Clean AI Finance - Minimalist Financial Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
-            --secondary-color: #0f172a;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --font-family: 'Inter', sans-serif;
-            --border-color: #e2e8f0;
+            --primary: #2563eb;
+            --primary-glow: rgba(37, 99, 235, 0.4);
+            --bg-dark: #0f172a;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-family: 'Outfit', sans-serif;
         }
 
         * {
@@ -29,24 +28,17 @@
         body {
             font-family: var(--font-family);
             color: var(--text-main);
-            background-color: var(--bg-body);
+            background-color: var(--bg-dark);
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        /* Navigation */
+        /* --- MODERN NAVIGATION --- */
         .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            padding: 1rem 5%;
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1.25rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -58,14 +50,10 @@
         .nav-brand {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--secondary-color);
+            letter-spacing: -1px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-brand-icon {
-            color: var(--primary-color);
+            gap: 10px;
         }
 
         .nav-links {
@@ -77,354 +65,236 @@
 
         .nav-links a {
             font-weight: 500;
-            color: var(--text-light);
+            color: var(--text-muted);
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
+        .nav-links a:hover {
+            color: white;
         }
 
         .btn-nav {
-            background-color: var(--primary-color);
-            color: #ffffff !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-        }
-
-        .btn-nav:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-1px);
-        }
-
-        /* Global UI Elements */
-        .btn {
-            display: inline-block;
-            padding: 0.875rem 1.75rem;
-            border-radius: 6px;
+            background: var(--primary);
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 99px;
             font-weight: 600;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        /* --- ULTRA-WIDE HERO --- */
+        .hero-banner {
+            width: 100%;
+            height: 450px;
+            background: url('hero_wide.png') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
+            max-width: 900px;
+            padding: 0 5%;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 5%;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 5%;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
+        .hero-content p {
             font-size: 1.25rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
-        /* Features Section */
-        .features-section {
-            background-color: var(--bg-card);
+        /* --- PRODUCT SHOWCASE (WIDE) --- */
+        .showcase-container {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.125rem;
+        .mockup-wrap {
+            width: 100%;
             margin-bottom: 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: var(--bg-card);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
+        .mockup-wrap img {
+            width: 100%;
+            display: block;
+            opacity: 0.9;
+            transition: opacity 0.5s;
+        }
+
+        .mockup-wrap:hover img {
+            opacity: 1;
+        }
+
+        /* --- GLASS FEATURES --- */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
-        .feature-card {
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-card);
-            transition: all 0.3s ease;
+        .glass-card {
+            padding: 3rem;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-            border-color: var(--primary-color);
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+        .icon-box {
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--secondary-color);
+        .glass-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        /* How it Works */
-        .how-it-works {
-            background-color: var(--bg-body);
+        .glass-card p {
+            color: var(--text-muted);
         }
 
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            position: relative;
-        }
-
-        .step {
+        /* --- CALL TO ACTION --- */
+        .cta-section {
+            padding: 8rem 5%;
             text-align: center;
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
-        .step h4 {
+        .btn-huge {
             font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 0.75rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: #ffffff;
-            padding: 3rem 5%;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
+            padding: 1.2rem 3.5rem;
+            background: white;
+            color: var(--bg-dark);
+            border-radius: 99px;
             font-weight: 700;
+            transition: all 0.3s;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+        .btn-huge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
         }
 
-        .footer-links a:hover {
-            color: #94a3b8;
-        }
-
-        .copyright {
-            color: #64748b;
-            font-size: 0.875rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            width: 100%;
+        footer {
+            padding: 4rem 5%;
+            border-top: 1px solid var(--glass-border);
             text-align: center;
+            color: var(--text-muted);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            /* Mobile menu would go here */
+        @media (max-width: 900px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-banner { height: 300px; }
         }
     </style>
 </head>
 
 <body>
     <nav class="navbar">
-        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI</a>
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="logo" style="height: 28px;">
+            Clean AI
+        </a>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
             <li><a href="tool.html" class="btn-nav">Try Tool</a></li>
         </ul>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Turn Messy Financial Data into Clear Insights Instantly</h1>
-            <p>Empower your finance team. Clean AI automatically extracts, categorizes, and analyzes complex bank
-                statements from PDFs and CSVs in seconds.</p>
-            <a href="tool.html" class="btn btn-primary">Start Analyzing Now</a>
-        </section>
+    <!-- CLASSY WIDE HERO -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Financial Clarity at Scale</h1>
+            <p>Clean AI extracts and categorizes millions of transactions from messy bank statements with surgical precision.</p>
+        </div>
+    </section>
 
-        <!-- Features Section -->
-        <section class="container features-section text-center">
-            <h2 class="section-title">Everything You Need for Financial Clarity</h2>
-            <p class="section-subtitle">A robust toolkit designed specifically for modern finance professionals.</p>
+    <main class="showcase-container">
+        
+        <!-- DASHBOARD DISPLAY -->
+        <div class="mockup-wrap">
+            <img src="mockup_premium_wide.png" alt="Premium Dashboard">
+        </div>
 
-            <div class="features-grid text-left">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Smart PDF & CSV Parsing</h3>
-                    <p>Advanced OCR and parsing logic effortlessly handles borderless tables, misaligned columns, and
-                        messy data formats.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                            </polygon>
-                        </svg>
-                    </div>
-                    <h3>Intelligent Categorization</h3>
-                    <p>Machine learning automatically cleans up transaction descriptions and assigns highly accurate
-                        expense and income categories.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10"></line>
-                            <line x1="12" y1="20" x2="12" y2="4"></line>
-                            <line x1="6" y1="20" x2="6" y2="14"></line>
-                        </svg>
-                    </div>
-                    <h3>Instant Visual Dashboard</h3>
-                    <p>Watch your raw data instantly transform into beautiful, easy-to-read charts, cash flow summaries,
-                        and actionable insights.</p>
-                </div>
+        <div class="features-grid">
+            <div class="glass-card">
+                <div class="icon-box">⚡</div>
+                <h3>Instant Parsing</h3>
+                <p>Advanced OCR cleans misaligned tables and broken text in under 60 seconds.</p>
             </div>
-        </section>
-
-        <!-- How it works -->
-        <section class="how-it-works container text-center">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">From raw statement to clean dashboard in three simple steps.</p>
-
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Upload File</h4>
-                    <p>Securely upload your messy bank statement in PDF or CSV format.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>AI Processing</h4>
-                    <p>Our intelligent engine instantly cleans, aligns, and categorizes the transactions.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Analyze & Export</h4>
-                    <p>Review the visual breakdown and export perfectly formatted data for your books.</p>
-                </div>
+            <div class="glass-card">
+                <div class="icon-box">🧠</div>
+                <h3>AI Insights</h3>
+                <p>Deep-learning categorizes every dollar spent into 25+ accounting-ready tax buckets.</p>
             </div>
-        </section>
+            <div class="glass-card">
+                <div class="icon-box">🔒</div>
+                <h3>Enterprise Security</h3>
+                <p>Your data is processed with cold-storage security and end-to-end encryption.</p>
+            </div>
+        </div>
+
+        <!-- SECONDARY WIDE DISPLAY -->
+        <div style="margin-top: 6rem;" class="mockup-wrap">
+            <img src="mockup_dashboard_wide.png" alt="Analytics Dashboard">
+        </div>
+
     </main>
 
+    <section class="cta-section">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Ready to automate your books?</h2>
+        <a href="tool.html" class="btn-huge">Try the Tool for Free</a>
+    </section>
+
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo"><img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI</div>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="tool.html">Tool</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="refund.html">Refund Policy</a></li>
-            </ul>
-            <div class="copyright">
-                &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
-            </div>
+        <p>&copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; font-size: 0.8rem;">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="refund.html">Refunds</a>
         </div>
     </footer>
 
-    <!-- Custom Clean AI Chatbot Widget -->
     <script src="chatbot.js?v=2"></script>
 </body>
 
