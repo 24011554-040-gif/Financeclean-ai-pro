@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Email Confirmed - Clean AI Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --font-family: 'Inter', sans-serif;
+            --border-color: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); color: var(--text-main); background-color: var(--bg-body); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; gap: 0.5rem; }
+        
+        .confirmation-box {
+            max-width: 500px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .success-icon {
+            display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background-color: rgba(34, 197, 94, 0.1); color: #22c55e; border-radius: 50%; margin-bottom: 1.5rem;
+        }
+
+        .btn { display: inline-block; padding: 0.875rem 1.75rem; border-radius: 6px; font-weight: 600; text-align: center; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background-color: var(--primary-color); color: #ffffff; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); }
+        .btn-primary:hover { background-color: var(--primary-hover); }
+
+        footer { background-color: var(--secondary-color); color: #ffffff; padding: 3rem 5%; margin-top: auto; text-align: center; }
+        .copyright { color: #64748b; font-size: 0.875rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Clean AI Logo" style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;"> Clean AI</a>
+    </nav>
+
+    <main style="flex: 1;">
+        <div class="confirmation-box">
+            <div class="success-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h1 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 2rem;">Email Confirmed!</h1>
+            <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.125rem;">
+                Your email address has been successfully verified. You can now close this tab and return to the application to log in.
+            </p>
+            <a href="#" id="return-btn" class="btn btn-primary" style="width: 100%;">
+                Return to App
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-light);">
+                If your app is running locally, you can safely close this page.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 Clean AI Finance. Created by Ali Haider. All rights reserved.
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('return-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = "http://localhost:8501";
+        });
+    </script>
+</body>
+</html>
